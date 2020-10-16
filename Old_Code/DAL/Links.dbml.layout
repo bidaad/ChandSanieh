@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Links">
+  <DataContextMoniker Name="/LinksDataContext" />
+  <nestedChildShapes>
+    <classShape Id="91a8105d-d44e-4080-a709-45098ad96919" absoluteBounds="3.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LinksDataContext/EnLinks" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba4cd47d-84d0-4fd3-96a9-40f16204ab03" absoluteBounds="3.5149999999999997, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="51d6216f-3dcd-42f6-a969-50e0c2bf4dd0" absoluteBounds="0.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/LinksDataContext/Links" />
+      <nestedChildShapes>
+        <elementListCompartment Id="27a8b587-2b2c-49fe-9944-fef6cbe491a7" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b741e3e9-6166-43ab-80fb-0b14962e47d7" isExpanded="false" absoluteBounds="3.5, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/LinksDataContext/vEnLinks" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d8d24128-64e1-4ffc-9425-3fffb0b801b8" absoluteBounds="3.515, 2.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="51a23ad9-14be-4dd1-9ded-7ec5b347d6b9" isExpanded="false" absoluteBounds="0.5, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/LinksDataContext/vLinks" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10b9ba42-2650-45b6-a99d-733d8247ac77" absoluteBounds="0.51499999999999968, 2.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ca0fc8d2-95b5-4051-bf06-bd68f97450b2" isExpanded="false" absoluteBounds="3.125, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/LinksDataContext/vRandEnLinks" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d68c572-fe1e-4325-99fd-25e5355a36c1" absoluteBounds="3.14, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c0234344-9bd9-43b2-910f-01238674be37" isExpanded="false" absoluteBounds="0.625, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/LinksDataContext/vRandLinks" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2a95d66b-0ad0-4245-a592-304d5c9a3697" absoluteBounds="0.63999999999999968, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Likes">
+  <DataContextMoniker Name="/LikesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d863ac5f-1fbb-4be1-b092-552738bfe280" absoluteBounds="4.875, 1.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LikesDataContext/Likes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="afb3ee26-4ca4-4f02-b471-7e151b0c4d15" absoluteBounds="4.89, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Whispers">
+  <DataContextMoniker Name="/WhispersDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1b0b4266-0dfa-4d0f-b063-63062254592e" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/WhispersDataContext/Whispers" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a92536bd-d60f-4942-879a-875d893286ec" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="01af2ef2-8356-434d-b28d-647413431b59" isExpanded="false" absoluteBounds="0.5, 1.875, 2, 0.45">
+      <DataClassMoniker Name="/WhispersDataContext/vWhispers" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8743f596-82f6-4c92-b22f-caa3c95e97c3" absoluteBounds="0.51499999999999968, 2.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

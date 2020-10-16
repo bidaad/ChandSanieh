@@ -1,0 +1,245 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="InnerPage.master.cs"
+    Inherits="AceNews.InnerPage" %>
+
+<%@ Register Src="~/UserControls/Banner.ascx" TagName="Banner" TagPrefix="Ban" %>
+<%@ Register Src="~/UserControls/MainMenu.ascx" TagName="MainMenu" TagPrefix="UCMainMenu" %>
+<%@ Register Src="~/UserControls/UCMostViewed.ascx" TagName="UCMostViewed" TagPrefix="UCMV" %>
+<%@ Register Src="~/UserControls/UCTopArticle.ascx" TagName="UCTopArticle" TagPrefix="UCTA" %>
+<%@ Register Src="~/UserControls/MainMenu.ascx" TagName="MainMenu" TagPrefix="UCMM" %>
+<%@ Register Src="~/UserControls/SiteLog.ascx" TagName="SiteLog" TagPrefix="UCSL" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link id="Link1" runat="server" href="~/Styles/main.css" media="screen" rel="stylesheet"
+        type="text/css" />
+    <link id="Link3" runat="server" href="~/Styles/Orbit.css" rel="stylesheet" type="text/css" />
+    <link id="Link2" runat="server" href="~/Styles/jquery-ui-1.7.2.custom.css" rel="stylesheet"
+        type="text/css" />
+    <link id="Link4" runat="server" rel="stylesheet" href="~/styles/jquery-ui.css" />
+    <title>چند ثانیه</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta id="content" runat="server" content="چند ثانیه" name="keywords" />
+    <meta id="description" runat="server" content="چند ثانیه" name="description" />
+    <meta name="author" content="چند ثانیه" />
+    <link rel="alternate" type="application/rss+xml" title="AceNewsNews RSS 2.0 News Feed"
+        href="/Rss.aspx" />
+    <%--<link id="favicon" rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />--%>
+</head>
+<body>
+    <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {
+            document.write(unescape('%3Cscript src="/scripts/jquery-min.js" %3E%3C/script%3E'));
+        }
+    </script>
+    <script type="text/javascript">
+        function WideKeyword() {
+            if ($("#txtKeyword").width() < 200)
+                $("#txtKeyword").animate({ "width": "+=150px" }, "slow");
+        }
+        function UnWideKeyword() {
+            $("#txtKeyword").animate({ "width": "+=-150px" }, "slow");
+        }
+    </script>
+    <form id="form1" runat="server">
+    <asp:Panel runat="server" ID="pnlHomeWrapper" CssClass="HomeWrapper">
+        <div id="HomeHeader">
+            <div class="Head1">
+                <asp:Image ID="imgHeader" ImageUrl="~/images/Header/header.jpg" runat="server" />
+            </div>
+            <div class="Clear">
+            </div>
+        </div>
+        <div class="MainHeaderLinks">
+            <table>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink6" NavigateUrl="~/AboutUs.aspx" runat="server">درباره ما </asp:HyperLink>
+                    </td>
+                    <td>
+                        |
+                    </td>
+                    <td>
+                        <asp:HyperLink ID="HyperLink5" NavigateUrl="~/ContactUs.aspx" runat="server">تماس با ما </asp:HyperLink>
+                    </td>
+                    <td>
+                        |
+                    </td>
+                    <td>
+                        <asp:HyperLink ID="HyperLink4" NavigateUrl="~" runat="server">صفحه اصلی</asp:HyperLink>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="GrayBar">
+            <div>
+                <div class="TimeCont">
+                    <asp:Label ID="lblDate" runat="server"></asp:Label>
+                </div>
+            </div>
+            <div class="SearchCont">
+                <ul class="tblSearch">
+                    <li>
+                        <asp:ImageButton ID="btnSearch" ImageUrl="~/images/Site/btnSearch.png" runat="server"
+                            OnClick="btnSearch_Click" /></li>
+                    <li class="BGSearchKeyword">
+                        <AKP:ExTextBox ID="txtKeyword" onclick="ActivateTextBox(this);WideKeyword()" onblur="UnWideKeyword();this.ClassName='GrayTextBox';if(this.value=='') this.value = 'جستجو';"
+                            ClientIDMode="Static" Text="جستجو" CssClass="GrayTextBox" runat="server"></AKP:ExTextBox></li>
+                    <li class="BGSearchRight"></li>
+                    <%--<li class="AdvancedSearch">
+                        <asp:HyperLink ID="hplAdvancedSearch" NavigateUrl="~/AdvancedSearch.aspx" runat="server">جستجوی پیشرفته</asp:HyperLink>
+                    </li>--%>
+                </ul>
+            </div>
+            <div id="NewsVertical">
+                <ul id="TickerVertical">
+                    <li>
+                        <div class="sampleClass">
+                            &nbsp;<span id="sample"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <script type="text/javascript"><!--
+                            var ps;
+                            var TelexSite = function () {
+                                ps = new newsbar("ps", "sample", 40, 3000);
+                                ps.setData([<%=strTypingNews %>]);
+                                ps.init();
+                            }
+                            $(document).ready(function () {
+                                TelexSite();
+                            });
+                    //--></script>
+        </div>
+        <div class="InnerPage" id="MainContent">
+            <asp:Panel runat="server" ID="pnlLeft" CssClass="ColLeft">
+                <div class="BoxNoor1" style="margin-top: 5px;">
+                    <table style="width: 100%;" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="BoxNoor1TopLeft">
+                            </td>
+                            <td class="BoxNoor1Top">
+                            </td>
+                            <td class="BoxNoor1TopRight">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="BoxNoor1_Left">
+                            </td>
+                            <td class="BoxNoor1_Content">
+                                <div>
+                                    <Ban:Banner ID="Banner2" runat="server" PositionCode="3" />
+                                    <div class="Clear">
+                                    </div>
+                                </div>
+                                <div class="Clear">
+                                </div>
+                            </td>
+                            <td class="BoxNoor1_Right">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="BoxNoor1BotLeft">
+                            </td>
+                            <td class="BoxNoor1_Bot">
+                            </td>
+                            <td class="BoxNoor1BotRight">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="BoxNoor1" style="margin-top: 5px;">
+                    <table style="width: 100%;" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="BoxNoor1TopLeft">
+                            </td>
+                            <td class="BoxNoor1Top">
+                            </td>
+                            <td class="BoxNoor1TopRight">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="BoxNoor1_Left">
+                            </td>
+                            <td class="BoxNoor1_Content">
+                                <div>
+                                    <Ban:Banner ID="Banner1" runat="server" PositionCode="4" />
+                                    <div class="Clear">
+                                    </div>
+                                </div>
+                                <div class="Clear">
+                                </div>
+                            </td>
+                            <td class="BoxNoor1_Right">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="BoxNoor1BotLeft">
+                            </td>
+                            <td class="BoxNoor1_Bot">
+                            </td>
+                            <td class="BoxNoor1BotRight">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <UCMV:UCMostViewed runat="server">
+                    </UCMV:UCMostViewed>
+                </div>
+            </asp:Panel>
+            <div class="ColMid">
+                <asp:ContentPlaceHolder ID="CP1" runat="server">
+                </asp:ContentPlaceHolder>
+                <div class="Clear">
+                </div>
+            </div>
+            <asp:Panel runat="server" ID="pnlRight" CssClass="ColRight">
+                <div>
+                    <UCMM:MainMenu runat="server" />
+                </div>
+                <div>
+                    <UCTA:UCTopArticle runat="server" />
+                </div>
+                <div>
+                    <UCSL:SiteLog runat="server" />
+                </div>
+                <div class="Clear">
+                </div>
+            </asp:Panel>
+            <div class="Clear">
+            </div>
+        </div>
+        <div class="Clear">
+        </div>
+        <asp:ContentPlaceHolder ID="CP2" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="Clear">
+        </div>
+        <div id="Footer">
+            <div class="Marginer2">
+                <div class="SiteBottom">
+                    <div class="Links">
+                        <ul class="FooterLinks">
+                            <li>
+                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/">صفحه اصلی</asp:HyperLink></li>
+                            <li>&nbsp;|&nbsp; </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/AboutUs.aspx">درباره ما</asp:HyperLink></li>
+                            <li>&nbsp;|&nbsp; </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/ContactUs.aspx">تماس با ما</asp:HyperLink></li>
+                        </ul>
+                    </div>
+                    <div class="Clear">
+                    </div>
+                    <div class="CopyRight">
+                        کلیه حقوق این وب سایت متعلق به چند ثانیه می باشد و استفاده
+                        از مطالب با ذکر منبع بلامانع است</div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+    </form>
+</body>
+</html>

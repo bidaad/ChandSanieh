@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Zone">
+  <DataContextMoniker Name="/ZoneDataContext" />
+  <nestedChildShapes>
+    <classShape Id="92eb5ed5-5cb8-45c1-809a-d02b987a15b2" absoluteBounds="0.5, 0.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/ZoneDataContext/Provinces" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2fd07d9c-801a-4beb-8c1f-3fbea6f7d176" absoluteBounds="0.515, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d9fe108-9786-45e1-a051-872d4adac39f" absoluteBounds="3, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ZoneDataContext/Cities" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6842ff6-664e-4e9c-b321-baa70340d099" absoluteBounds="3.015, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d241de1c-f2c9-4d4e-8b55-a97f6dcf20ed" isExpanded="false" absoluteBounds="0.5, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/ZoneDataContext/vProvinces" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a26ce92-0c75-49ac-aea8-4384e799e2eb" absoluteBounds="0.51500000000000012, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ab720d0-80d4-47ca-8fd5-62bd8f729c61" isExpanded="false" absoluteBounds="3, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/ZoneDataContext/vCities" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a1fd7b9-da0c-41c2-b02f-0dd28394866f" absoluteBounds="3.015, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,267 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainRoot.Master.cs" Inherits="AceNews.RootSecond" %>
+
+<%@ Register Src="~/UserControls/UCMainMenu.ascx" TagName="MainMenu" TagPrefix="UCMM" %>
+<%@ Register Src="~/UserControls/Banner.ascx" TagName="UCBanner" TagPrefix="UCB" %>
+<%@ Register Src="~/UserControls/UCSelectedNews.ascx" TagName="UCSelectedNews" TagPrefix="UCSN" %>
+<%@ Register Src="~/UserControls/UCWhispers.ascx" TagName="UCWhispers" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCDaySubjects.ascx" TagName="UCDaySubjects" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCMayNotReads.ascx" TagName="UCMayNotReads" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCNewspapers.ascx" TagName="UCNewspapers" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCMultiMedia.ascx" TagName="UCMultiMedia" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCEditorChoice.ascx" TagName="UCEditorChoice" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCMemorialPic.ascx" TagName="UCMemorialPic" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCHistory.ascx" TagName="UCHistory" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCNewsByType.ascx" TagName="UCNewsByType" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCNewsByCat.ascx" TagName="UCNewsByCat" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCTextPicNews.ascx" TagName="UCTextPicNews" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCNotes.ascx" TagName="UCNotes" TagPrefix="UC" %>
+<%@ Register Src="~/UserControls/UCGalleries.ascx" TagName="UCGalleries" TagPrefix="UC" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link id="lnkMainCSS" runat="server" href="~/Styles/Main.css" media="screen" rel="stylesheet"
+        type="text/css" />
+    <link id="Link3" runat="server" href="~/Styles/Orbit.css" rel="stylesheet" type="text/css" />
+    <link id="Link1" runat="server" rel="stylesheet" href="~/styles/bootstrap.min.css" />
+    <link runat="server" href="~/Styles/prettyPhoto.css" type="text/css" rel="stylesheet"
+        media="all" />
+    <title>:: چند ثانیه :: </title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="چند ثانیه" name="keywords" />
+    <meta content="چند ثانیه" name="description" />
+    <meta name="author" content=" «چند ثانیه»" />
+    <meta id="Refresh" http-equiv="refresh" content="300" />
+    <link rel="alternate" type="application/rss+xml" title="AceNewsNews RSS 2.0 News Feed"
+        href="/Rss.aspx" />
+</head>
+<body onload="updateClock(); setInterval('updateClock()', 1000 )">
+    <script type="text/javascript">
+        function WideKeyword() {
+            if ($("#txtKeyword").width() < 200)
+                $("#txtKeyword").animate({ "width": "+=150px" }, "slow");
+        }
+        function UnWideKeyword() {
+            $("#txtKeyword").animate({ "width": "+=-150px" }, "slow");
+
+        }
+
+    </script>
+    <form id="form1" runat="server">
+    <input name="SendSlide" id="SendSlide" type="hidden" />
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <asp:Panel runat="server" ID="pnlHomeWrapper" CssClass="HomeWrapper">
+        <div class="MainPage" id="MainContent">
+            <div class="ColLeft">
+                <div>
+                    <ul class="Toolbar2">
+                        <li class="btnMainPage">
+                            <asp:Label ID="lblNewsTitles" runat="server" Text="پربحث‌ ترین‌ها"></asp:Label>
+                        </li>
+                        <li class="NewsTicker">
+                            <asp:Panel runat="server" ID="pnlTickNews">
+                                <div id="NewsVertical">
+                                    <ul id="TickerVertical">
+                                        <li>
+                                            <div class="sampleClass">
+                                                &nbsp;<span id="sample"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <ul id="js-news" class="js-hidden">
+                                    <asp:Repeater ID="rptNewsTicker" runat="server">
+                                        <ItemTemplate>
+                                            <li class="news-item"><a href="#" onclick="ScrollToItem('<%#Eval("Code") %>')">
+                                                <%#Eval("Title") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        $('#js-news').ticker(
+                            {
+                                speed: 0.10,
+                                direction: 'rtl',
+                                titleText: ''
+                            }
+                            );
+                                    });
+                                </script>
+                            </asp:Panel>
+                        </li>
+                        <li>
+                            <div class="SearchCont">
+                                <ul class="tblSearch">
+                                    <li class="BGSearchKeyword">
+                                        <AKP:ExTextBox ID="txtKeyword" onclick="ActivateTextBox(this);" ClientIDMode="Static"
+                                            Text="جستجو" CssClass="GrayTextBox" runat="server"></AKP:ExTextBox></li>
+                                    <li>
+                                        <asp:ImageButton ID="ImageButton1" ImageUrl="~/images/btnsearch2.png" runat="server"
+                                            OnClick="btnSearch_Click" /></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="AllDates">
+                        <ul class="DateCaptions">
+                            <li>
+                                <asp:Label ID="lblPersianDate" runat="server" Text=""></asp:Label>
+                            </li>
+                            <li>
+                                <asp:Label ID="lblArabicDate" runat="server" Text=""></asp:Label>
+                            </li>
+                            <li>
+                                <asp:Label ID="lblGerigorianDate" CssClass="MiladiDate" runat="server" Text=""></asp:Label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="InnerHome">
+                    <div class="ColLeftInner">
+                        <UCB:UCBanner ID="UCBanner1" runat="server" PositionCode="1" />
+                        <div class="SocialLinks">
+                            <asp:HyperLink ID="hplTelegram" Target="_blank" NavigateUrl="https://telegram.me/chandsanieh"
+                                runat="server">
+                                <asp:Image ID="Image1" ImageUrl="~/images/Telegram.jpg" runat="server" />
+                            </asp:HyperLink>
+                        </div>
+                        <div class="SocialLinks">
+                            <asp:HyperLink ID="hplInstagram" Target="_blank" NavigateUrl="https://www.instagram.com/chandsanieh.news/"
+                                runat="server">
+                                <asp:Image ID="Image2" ImageUrl="~/images/Instagram.jpg" runat="server" />
+                            </asp:HyperLink>
+                        </div>
+                        <div class="SocialLinks">
+                            <asp:HyperLink ID="HyperLink4" Target="_blank" NavigateUrl="https://www.Twitter.com/chandsanieh"
+                                runat="server">
+                                <asp:Image ID="Image4" ImageUrl="~/images/Twitter.jpg" runat="server" />
+                            </asp:HyperLink>
+                        </div>
+                        <UC:UCGalleries runat="server" ID="UCGalleries1" />
+                        <UC:UCNewspapers runat="server" ID="UCNewspapers1" />
+                        
+                        <UC:UCHistory runat="server" ID="UCHistory1" />
+
+                        <UC:UCNewsByCat ID="UCNewsByCat5" runat="server" NewsCount="20" HCNewsCatCode="3" />
+                        <UC:UCNewsByCat ID="UCNewsByCat6" runat="server" NewsCount="20" HCNewsCatCode="4" />
+                        <UC:UCNewsByCat ID="UCNewsByCat10" runat="server" NewsCount="20" HCNewsCatCode="6" />
+
+                        <UC:UCNewsByCat ID="UCNewsByCat4" runat="server" NewsCount="10" HCNewsCatCode="5" />
+                        <UC:UCNewsByCat ID="UCNewsByCat7" runat="server" NewsCount="10" HCNewsCatCode="7" />
+                        <UC:UCNewsByCat ID="UCNewsByCat8" runat="server" NewsCount="10" HCNewsCatCode="8" />
+
+                        <%--<UC:UCDaySubjects ID="UCDaySubjects1" runat="server" />--%>
+                        
+                        <UCB:UCBanner ID="UCBanner2" runat="server" PositionCode="2" />
+                        <%--<UC:UCMultiMedia runat="server" HCPicTypeCode="1" ID="UCMultiMedia1" />--%>
+                        <div class="Clear">
+                        </div>
+                    </div>
+                    <div class="ColRightInner">
+                        <div id="HomeHeader">
+                            <div class="CycleTopBG">
+                            </div>
+                            <div class="TopMarginer">
+                            </div>
+                            <div class="Clear">
+                            </div>
+                            <div class="Clear">
+                            </div>
+                            <div class="Head1">
+                                <UCSN:UCSelectedNews ID="UCSelectedNews1" runat="server" />
+                            </div>
+                        </div>
+                        <div class="Clear">
+                        </div>
+                        <asp:ContentPlaceHolder ID="CP1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+            <asp:Panel runat="server" ID="pnlRight" CssClass="ColRight">
+                <div class="Logo">
+                    <asp:HyperLink ID="HyperLink1" NavigateUrl="~/" runat="server">
+                        <asp:Image ID="Image3" Width="221" Height="221" ImageUrl="~/images/spacer.gif" runat="server" />
+                    </asp:HyperLink>
+                </div>
+                <div class="Shoar Farsi">
+                    کوتاه ترین خبرها در کوتاه ترین زمان
+                </div>
+                <UCMM:MainMenu runat="server" />
+                <UCB:UCBanner ID="UCBanner3" runat="server" PositionCode="3" />
+                <UC:UCNewsByCat ID="UCNewsByCat2" runat="server" NewsCount="30" HCNewsCatCode="1" />
+                <UC:UCNewsByCat ID="UCNewsByCat3" runat="server" NewsCount="20" HCNewsCatCode="2" />
+                <UC:UCNewsByCat ID="UCNewsByCat9" runat="server" NewsCount="20" HCNewsCatCode="9" />
+                <%--<UC:UCMayNotReads ID="UCMayNotReads1" runat="server" />--%>
+                <UCB:UCBanner ID="UCBanner4" runat="server" PositionCode="4" />
+                <UC:UCMultiMedia runat="server" HCPicTypeCode="2" ID="UCMultiMedia2" />
+                <UC:UCTextPicNews runat="server" ID="UCTextPicNews1" />
+                <%--<UC:UCMemorialPic runat="server" ID="UCMemorialPic1" />--%>
+                <%--<UC:UCEditorChoice runat="server" ID="UCEditorChoice1" />--%>
+                <%--<UC:UCNotes runat="server" id="UCNotes1" />--%>
+                <div class="Clear">
+                </div>
+            </asp:Panel>
+            <div class="Clear">
+            </div>
+        </div>
+        <div class="Clear">
+        </div>
+        <asp:ContentPlaceHolder ID="CP2" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="Clear">
+        </div>
+        <div id="Footer">
+            <div class="Right">
+                <div class="LogoSmall">
+                </div>
+                <div class="CopyRight">
+                    :.
+                    <asp:Literal ID="ltrCopyright" Text="کلیه حقوق برای چند ثانیه محفوظ است. نقل مطالب سایت تنها با ذکر منبع (www.chandsanieh.ir) مجاز است"
+                        runat="server"></asp:Literal>
+                    .:
+                </div>
+            </div>
+            <div class="Left">
+                <ul class="FooterLinks">
+                    <li>
+                        <!-- Begin WebGozar.com Counter code -->
+                        <script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=3327297&amp;t=counter"></script>
+                        <noscript>
+                            <a href="http://www.webgozar.com/counter/stats.aspx?code=3327297" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+                        <!-- End WebGozar.com Counter code -->
+                    </li>
+                    <%--                    <li>
+                        <asp:HyperLink ID="HyperLink1" runat="server" ImageUrl="~/images/facebook.png" Target="_blank"
+                            NavigateUrl="https://www.facebook.com/pages/Ace-News/293023067544483?ref=hl"></asp:HyperLink></li>
+                    --%>
+                    <li>
+                        <asp:HyperLink ID="hplBotHome" runat="server" NavigateUrl="~/AboutUs.aspx">درباره ما</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="hplBotAboutUs" runat="server" NavigateUrl="#">نظرسنجی</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="hplBotContactUs" runat="server" NavigateUrl="#">پیوندها</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="mailto:info@channdsanieh.ir">تماس با ما</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="#">اشتراک خبرنامه</asp:HyperLink></li>
+                </ul>
+            </div>
+            <div class="Clear">
+            </div>
+        </div>
+    </asp:Panel>
+    </form>
+    <div id="backtotop" style="display: block;">
+        <a href="#">
+            <img border="0" alt="Go to TOP" src="/images/back2up.png" />
+        </a>
+    </div>
+</body>
+</html>
