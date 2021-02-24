@@ -94,6 +94,8 @@ public class BOLNews : BaseBOLNews, IBaseBOL<News>
         return Result.OrderByDescending(p => p.Priority).FirstOrDefault();
     }
 
+
+
     internal IQueryable<vNews> GetLatestNews(int TakeCount, int? HCNewsTypeCode)
     {
         IQueryable<vNews> Result = dataContext.vNews;

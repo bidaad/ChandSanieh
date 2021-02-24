@@ -27,6 +27,7 @@ D:\AceNews\AceNews\bin\Microsoft.AI.Web.xml
 D:\AceNews\AceNews\bin\Microsoft.AI.WindowsServer.xml
 D:\AceNews\AceNews\bin\Microsoft.ApplicationInsights.xml
 D:\AceNews\AceNews\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\AceNews\AceNews\obj\Release\AceNews.csprojResolveAssemblyReference.cache
 D:\AceNews\AceNews\obj\Release\AceNews.dll
 D:\AceNews\AceNews\obj\Release\AceNews.pdb
+D:\AceNews\AceNews\obj\Release\AceNews.csprojAssemblyReference.cache
+D:\AceNews\AceNews\obj\Release\AceNews.csproj.CopyComplete

@@ -71,8 +71,13 @@ namespace AceNews
 
 
                 lblPersianDate.Text = "امروز " + Tools.ChangeEnc(dtm.GetPersianLongDate(DateTime.Now));
-                lblArabicDate.Text = Tools.ChangeEncArabic(DateTime.Now.ToString("d MMM yyyy", new CultureInfo("ar")));
-                lblGerigorianDate.Text = DateTime.Now.ToString("ddd d MMM yyyy", CultureInfo.CreateSpecificCulture("en-US"));
+                //lblArabicDate.Text = Tools.ChangeEncArabic(DateTime.Now.ToString("d MMM yyyy", new CultureInfo("ar")));
+                //lblGerigorianDate.Text = DateTime.Now.ToString("ddd d MMM yyyy", CultureInfo.CreateSpecificCulture("en-US"));
+
+
+                BOLNews NewsBOL = new BOLNews();
+                rptTitleNews.DataSource = NewsBOL.GetLatestNews(60, null);
+                rptTitleNews.DataBind();
 
             }
 
@@ -153,9 +158,9 @@ namespace AceNews
             #endregion
 
 
-            BOLNews NewsBOL = new BOLNews();
-            rptNewsTicker.DataSource = NewsBOL.GetLatestTelexNews(5, null);
-            rptNewsTicker.DataBind();
+            //BOLNews NewsBOL = new BOLNews();
+            //rptNewsTicker.DataSource = NewsBOL.GetLatestTelexNews(5, null);
+            //rptNewsTicker.DataBind();
 
         }
         public string FormatDate(Object obj)

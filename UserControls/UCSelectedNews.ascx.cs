@@ -23,11 +23,38 @@ namespace AceNews.UserControls
             }
         }
 
+        public string FormatDateTime(Object obj)
+        {
+            string Result = "";
+            try
+            {
+                if (obj != null)
+                {
+                    DateTime CurDT = Convert.ToDateTime(obj);
+                    DateTimeMethods dtm = new DateTimeMethods();
+                    Result = Tools.ChageEnc(dtm.GetPersianDate(CurDT));
+
+                    string strCurrentMin = CurDT.Minute.ToString();
+                    if (strCurrentMin.Length == 1)
+                        strCurrentMin = "0" + strCurrentMin;
+                    Result += " ساعت: " + Tools.ChageEnc(CurDT.Hour + ":" + strCurrentMin);
+
+
+                }
+                return Result;
+
+            }
+            catch
+            {
+                return "";
+            }
+
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             BOLNews NewsBOL = new BOLNews();
             //rptNews.DataSource = NewsBOL.GetNewsByContentType(9, 4);
-            IQueryable<vNews> Result = NewsBOL.GetSepcialNews(5);
+            IQueryable<vNews> Result = NewsBOL.GetSepcialNews(2);
             rptNews.DataSource = Result;
             rptNews.DataBind();
 

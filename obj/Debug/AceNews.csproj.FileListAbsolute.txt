@@ -1,4 +1,3 @@
-D:\AceNews\AceNews\obj\Debug\AceNews.csprojResolveAssemblyReference.cache
 D:\AceNews\AceNews\bin\ApplicationInsights.config
 D:\AceNews\AceNews\bin\roslyn\csc.exe
 D:\AceNews\AceNews\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -30,3 +29,5 @@ D:\AceNews\AceNews\bin\Microsoft.ApplicationInsights.xml
 D:\AceNews\AceNews\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\AceNews\AceNews\obj\Debug\AceNews.dll
 D:\AceNews\AceNews\obj\Debug\AceNews.pdb
+D:\AceNews\AceNews\obj\Debug\AceNews.csprojAssemblyReference.cache
+D:\AceNews\AceNews\obj\Debug\AceNews.csproj.CopyComplete

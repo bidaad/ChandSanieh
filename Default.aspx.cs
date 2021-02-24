@@ -42,7 +42,7 @@ namespace AceNews
                 //BOLNews NewsBOL = new BOLNews();
                 //vNews LatestNews = NewsBOL.GetLatestNews(1);
 
-                NewsList1.ShowLatestNews(HCNewsCatCode, 25, null, null, PageNo, true, null, 1);
+                NewsList1.ShowLatestNews(HCNewsCatCode, 15, null, null, PageNo, true, null, 1);
 
             }
 

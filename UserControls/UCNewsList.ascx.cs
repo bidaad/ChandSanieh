@@ -52,7 +52,7 @@ namespace AceNews.Web.UI.UserControls
         public bool ShowTime = false;
         public string strPageNo;
         public int PageNo = 1;
-        int _pageSize = 20;
+        int _pageSize = 15;
         string ConcatUrl;
         protected bool _showPaging;
         public bool ShowPaging
