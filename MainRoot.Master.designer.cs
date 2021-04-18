@@ -87,13 +87,22 @@ namespace AceNews
         protected global::System.Web.UI.WebControls.Panel pnlHomeWrapper;
 
         /// <summary>
-        /// lblPersianDate control.
+        /// lblArabicDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPersianDate;
+        protected global::System.Web.UI.WebControls.Label lblArabicDate;
+
+        /// <summary>
+        /// lblGerigorianDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGerigorianDate;
 
         /// <summary>
         /// txtKeyword control.
@@ -112,6 +121,15 @@ namespace AceNews
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+
+        /// <summary>
+        /// lblPersianDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPersianDate;
 
         /// <summary>
         /// HyperLink1 control.
@@ -211,6 +229,60 @@ namespace AceNews
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::UserControls_Banner UCBanner6;
+
+        /// <summary>
+        /// UCBanner7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UserControls_Banner UCBanner7;
+
+        /// <summary>
+        /// UCBanner8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UserControls_Banner UCBanner8;
+
+        /// <summary>
+        /// UCBanner9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UserControls_Banner UCBanner9;
+
+        /// <summary>
+        /// UCBanner10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UserControls_Banner UCBanner10;
+
+        /// <summary>
+        /// UCBanner11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UserControls_Banner UCBanner11;
+
+        /// <summary>
+        /// UCBanner12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::UserControls_Banner UCBanner12;
 
         /// <summary>
         /// CP2 control.

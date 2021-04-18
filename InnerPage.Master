@@ -17,6 +17,7 @@
         type="text/css" />
     <link id="Link4" runat="server" rel="stylesheet" href="~/styles/jquery-ui.css" />
     <title>چند ثانیه</title>
+    <meta name="viewport" content="width=device-width" />
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <meta id="content" runat="server" content="چند ثانیه" name="keywords" />
     <meta id="description" runat="server" content="چند ثانیه" name="description" />

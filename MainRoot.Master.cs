@@ -70,9 +70,9 @@ namespace AceNews
                 StartSecond = CurDT.Second.ToString();
 
 
-                lblPersianDate.Text = "امروز " + Tools.ChangeEnc(dtm.GetPersianLongDate(DateTime.Now));
-                //lblArabicDate.Text = Tools.ChangeEncArabic(DateTime.Now.ToString("d MMM yyyy", new CultureInfo("ar")));
-                //lblGerigorianDate.Text = DateTime.Now.ToString("ddd d MMM yyyy", CultureInfo.CreateSpecificCulture("en-US"));
+                lblPersianDate.Text =  Tools.ChangeEnc(dtm.GetPersianLongDate(DateTime.Now));
+                lblArabicDate.Text = Tools.ChangeEncArabic(DateTime.Now.ToString("d MMM yyyy", new CultureInfo("ar")));
+                lblGerigorianDate.Text = DateTime.Now.ToString("ddd d MMM yyyy", CultureInfo.CreateSpecificCulture("en-US"));
 
 
                 BOLNews NewsBOL = new BOLNews();
@@ -89,10 +89,10 @@ namespace AceNews
             Page.Header.Controls.Add(scriptJQuery);
 
 
-            HtmlGenericControl scriptBootstrap = new HtmlGenericControl("script");
-            scriptBootstrap.Attributes.Add("src", this.ResolveClientUrl("~/Scripts/bootstrap.min.js"));
-            scriptBootstrap.Attributes.Add("type", "text/javascript");
-            Page.Header.Controls.Add(scriptBootstrap);
+            //HtmlGenericControl scriptBootstrap = new HtmlGenericControl("script");
+            //scriptBootstrap.Attributes.Add("src", this.ResolveClientUrl("~/Scripts/bootstrap.min.js"));
+            //scriptBootstrap.Attributes.Add("type", "text/javascript");
+            //Page.Header.Controls.Add(scriptBootstrap);
 
 
             HtmlGenericControl script = new HtmlGenericControl("script");

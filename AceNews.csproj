@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1779,6 +1780,8 @@
     <Content Include="Styles\Print.css" />
     <Content Include="Styles\sequencejs-theme.modern-slide-in.css" />
     <Content Include="swf\player.swf" />
+    <Content Include="Test.html" />
+    <Content Include="Test2.html" />
     <Content Include="UserControls\Banner.ascx" />
     <Content Include="UserControls\bigloading.gif" />
     <Content Include="UserControls\Login.ascx" />

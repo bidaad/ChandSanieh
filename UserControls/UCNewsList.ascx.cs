@@ -427,30 +427,37 @@ namespace AceNews.Web.UI.UserControls
 
         public string ShowAbstract(object objCode, object objAbstract, int MaxLen)
         {
-            if (objAbstract == null)
-                return "";
-            string strAbstract = objAbstract.ToString();
-            if (MaxLen > strAbstract.Length)
-                return strAbstract;
+            try
+            {
+                if (objAbstract == null)
+                    return "";
+                string strAbstract = objAbstract.ToString();
+                if (MaxLen > strAbstract.Length)
+                    return strAbstract;
 
-            string CutAbstract = Tools.ShowBriefText(strAbstract, MaxLen);
-            if (_keyword != null)
-            {
-                CutAbstract = CutAbstract.Replace(_keyword, "<span style=\"font-weight:bold;background-color:Yellow\">" + _keyword + "</span>");
-            }
-            else
-            {
-                if (CutAbstract.Length > 400)
+                string CutAbstract = Tools.ShowBriefText(strAbstract, MaxLen);
+                if (_keyword != null)
                 {
-                    int Code = Convert.ToInt32(objCode);
-                    int CutIndex = CutAbstract.IndexOf(" ", 500);
-                    if (CutIndex != -1)
+                    CutAbstract = CutAbstract.Replace(_keyword, "<span style=\"font-weight:bold;background-color:Yellow\">" + _keyword + "</span>");
+                }
+                else
+                {
+                    if (CutAbstract.Length > 300)
                     {
-                        CutAbstract = CutAbstract.Substring(0, CutIndex) + "<div onclick=\"ShowMore('More" + Code + "')\" class=\"SeeMore\">ادامه...</div><div id=\"More" + Code + "\" class=\"Hidden\">" + CutAbstract.Substring(CutIndex, CutAbstract.Length - CutIndex) + "</div>";
+                        int Code = Convert.ToInt32(objCode);
+                        int CutIndex = CutAbstract.IndexOf(" ", 400);
+                        if (CutIndex != -1)
+                        {
+                            CutAbstract = CutAbstract.Substring(0, CutIndex) + "<div onclick=\"ShowMore('More" + Code + "')\" class=\"SeeMore\">ادامه...</div><div id=\"More" + Code + "\" class=\"Hidden\">" + CutAbstract.Substring(CutIndex, CutAbstract.Length - CutIndex) + "</div>";
+                        }
                     }
                 }
+                return CutAbstract;
             }
-            return CutAbstract;
+            catch
+            {
+                return objAbstract.ToString();
+            }
         }
 
         internal void LoadMainCats(int MCat)

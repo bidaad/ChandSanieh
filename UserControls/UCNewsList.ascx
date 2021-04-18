@@ -29,7 +29,7 @@
                                    
                                 </div>
                                 <asp:Panel Visible="<%#IsNotArchive() %>" runat="server" CssClass="Abstract">
-                                    <%#ShowAbstract(Eval("Code"),  Eval("Abstract"), 1000) %>
+                                    <%#ShowAbstract(Eval("Code"),  Eval("Abstract"), 400) %>
                                 </asp:Panel>
                                    </div>
                             </div>

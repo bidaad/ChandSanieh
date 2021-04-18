@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UCSelectedNews.ascx.cs"
     Inherits="AceNews.UserControls.UCSelectedNews" %>
-<div class="topNewsBox">
+<div class="topNewsBox hidden-sm hidden-xs">
     <div id="topNewsBox">
         <asp:Repeater ID="rptNews" runat="server">
             <ItemTemplate>

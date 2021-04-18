@@ -2489,6 +2489,7 @@ table.tblBasketCount select {
 
 .SmallPicCont {
     padding: 3px;
+    margin-top:5px;
 }
 
 
@@ -6919,7 +6920,7 @@ table.form .FormLbl {
 
     .NewsPicCont img {
         border-radius: 5px 5px 5px 5px;
-        width: 100px;
+        width: 85px;
     }
 
 .SLeft {
@@ -6936,7 +6937,6 @@ table.form .FormLbl {
 }
 
 .cSideSmallPicCont img {
-    width: 80px;
     padding: 3px;
     border: solid 1px #D2D0D0;
 }
@@ -7065,15 +7065,18 @@ table.form .FormLbl {
     margin-left: 40px;
 }
 
-.news-caption{
-    bottom: 40px;
-    position:absolute;
-    z-index:1000;
-    color:#fff;
+.news-caption {
+    bottom: 20px;
+    position: absolute;
+    z-index: 1000;
+    color: #000;
     font-family: 'RNAFont';
-    font-size:16px;
+    font-size: 16px;
     font-weight: bold;
-    width:100%;
+    width: 90%;
+    background-color: #DDD;
+    opacity: 0.6;
+    right: 20px;
 }
 
 
@@ -7106,3 +7109,28 @@ table.form .FormLbl {
     padding-right: 20px;
 }
 
+.NewsList .row .col-lg-2{
+    padding-left:3px;
+    padding-right: 3px;
+
+}
+
+.latest-news-header{
+    width:100%;
+    font-family: RNAFont;
+    text-align: center;
+    font-size:26px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.banner-container{
+    margin-top: 15px;
+    margin-bottom:15px;
+}
+
+@media only screen and (max-width: 780px) {
+    .FullNewsPicCont {
+        float: unset;
+    }
+}

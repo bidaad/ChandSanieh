@@ -65,7 +65,7 @@
                     </div>
                     <div class="Clear">
                     </div>
-                    <div class="BotLine">
+                    <div class="BotLine hidden-sm hidden-xs">
                     </div>
                 </div>
                 <div class="Tools2">
@@ -98,7 +98,7 @@
                     <div class="NewsBody">
                         <asp:Panel runat="server" ID="pnlNewsPic" CssClass="FullNewsPicCont">
                             <div class="FullNewsPic">
-                                <asp:Image ID="hplImage" BorderWidth="1" runat="server"></asp:Image>
+                                <asp:Image ID="hplImage" CssClass="img-responsive" BorderWidth="1" runat="server"></asp:Image>
                             </div>
                             
                         </asp:Panel>

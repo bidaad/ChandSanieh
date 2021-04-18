@@ -16,8 +16,6 @@
 <%@ Register Src="~/UserControls/UCTextPicNews.ascx" TagName="UCTextPicNews" TagPrefix="UC" %>
 <%@ Register Src="~/UserControls/UCNotes.ascx" TagName="UCNotes" TagPrefix="UC" %>
 <%@ Register Src="~/UserControls/UCGalleries.ascx" TagName="UCGalleries" TagPrefix="UC" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -28,12 +26,13 @@
     <link id="Link1" runat="server" rel="stylesheet" href="~/styles/bootstrap.min.css" />
     <link runat="server" href="~/Styles/prettyPhoto.css" type="text/css" rel="stylesheet"
         media="all" />
+    <meta name="viewport" content="width=device-width" />
     <title>:: چند ثانیه :: </title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <meta content="چند ثانیه" name="keywords" />
     <meta content="چند ثانیه" name="description" />
     <meta name="author" content=" «چند ثانیه»" />
-    <meta id="Refresh" http-equiv="refresh" content="300" />
+    <meta id="Refresh" http-equiv="refresh" content="1300" />
     <link rel="alternate" type="application/rss+xml" title="AceNewsNews RSS 2.0 News Feed"
         href="/Rss.aspx" />
 </head>
@@ -55,27 +54,30 @@
         </asp:ScriptManager>
         <asp:Panel runat="server" ID="pnlHomeWrapper" CssClass="container">
 
-            <div class="header">
+            <div class="header hidden-sm">
                 <div class="header1">
                     <div class="row">
                         <div class="col-lg-4">
-                            <a href="https://www.instagram.com/chandsanieh.news/">
+                            <a target="_blank" href="https://www.instagram.com/chandsanieh.news/">
                                 <asp:Image runat="server" ImageUrl="~/images/Insta.png" AlternateText="Instagram" />
                             </a>
-                            <a href="https://telegram.me/chandsanieh">
+                            <a target="_blank" href="https://telegram.me/chandsanieh">
                                 <asp:Image runat="server" ImageUrl="~/images/Telegram.png" AlternateText="Telegram" />
                             </a>
-                            <a href="https://www.Twitter.com/chandsanieh">
+                            <a target="_blank" href="https://www.Twitter.com/chandsanieh">
                                 <asp:Image runat="server" ImageUrl="~/images/Twitter.png" AlternateText="Twitter" />
                             </a>
-                            <asp:Label ID="lblPersianDate" CssClass="persian-date" runat="server" Text=""></asp:Label>
+
+                            <asp:Label ID="lblArabicDate" CssClass="persian-date" runat="server" Text=""></asp:Label>
+                            <asp:Label ID="lblGerigorianDate" CssClass="persian-date" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="col-lg-4">
                             <div class="SearchCont">
                                 <ul class="tblSearch">
                                     <li class="BGSearchKeyword">
-                                        <AKP:ExTextBox ID="txtKeyword" onclick="ActivateTextBox(this);" ClientIDMode="Static"
-                                            Text="جستجو" CssClass="GrayTextBox" runat="server"></AKP:ExTextBox></li>
+                                        <akp:extextbox id="txtKeyword" onclick="ActivateTextBox(this);" clientidmode="Static"
+                                            text="جستجو" cssclass="GrayTextBox" runat="server"></akp:extextbox>
+                                    </li>
                                     <li>
                                         <asp:ImageButton ID="ImageButton1" ImageUrl="~/images/btnsearch2.png" runat="server"
                                             OnClick="btnSearch_Click" /></li>
@@ -83,6 +85,7 @@
                             </div>
                         </div>
                         <div class="col-lg-4">
+                            <asp:Label ID="lblPersianDate" CssClass="persian-date" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
                 </div>
@@ -100,8 +103,11 @@
             <div class="MainPage" id="MainContent">
 
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-3 col-sm-12 text-center">
                         <UCB:UCBanner ID="UCBanner1" runat="server" PositionCode="1" />
+                        <div class="latest-news-header">
+                            آخرین عناوین خبرها
+                        </div>
                         <div class="title-news-list">
                             <asp:Repeater ID="rptTitleNews" runat="server">
                                 <ItemTemplate>
@@ -118,18 +124,43 @@
                         <UCB:UCBanner ID="UCBanner4" runat="server" PositionCode="5" />
 
                     </div>
-                    <div class="col-lg-9">
+                    <div class="col-lg-9  col-sm-12">
                         <UCSN:UCSelectedNews ID="UCSelectedNews1" runat="server" />
                         <div class="row">
-                            <div class="col-lg-8">
+                            <div class="col-lg-8 col-sm-12">
                                 <asp:ContentPlaceHolder ID="CP1" runat="server">
                                 </asp:ContentPlaceHolder>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-4  col-sm-12 text-center">
                                 <UCB:UCBanner ID="UCBanner2" runat="server" PositionCode="2" />
-                                <UCB:UCBanner ID="UCBanner3" runat="server" PositionCode="3" />
-                                <UCB:UCBanner ID="UCBanner5" runat="server" PositionCode="7" />
-                                <UCB:UCBanner ID="UCBanner6" runat="server" PositionCode="8" />
+                                <div class="banner-container">
+                                    <UCB:UCBanner ID="UCBanner3" runat="server" PositionCode="3" />
+                                </div>
+                                <div class="banner-container">
+                                    <UCB:UCBanner ID="UCBanner5" runat="server" PositionCode="7" />
+                                </div>
+                                <div class="banner-container">
+                                    <UCB:UCBanner ID="UCBanner6" runat="server" PositionCode="8" />
+                                </div>
+                                <div class="banner-container">
+                                    <UCB:UCBanner ID="UCBanner7" runat="server" PositionCode="9" />
+                                </div>
+                                <div class="banner-container">
+                                    <UCB:UCBanner ID="UCBanner8" runat="server" PositionCode="10" />
+                                </div>
+                                <div class="banner-container">
+                                    <UCB:UCBanner ID="UCBanner9" runat="server" PositionCode="11" />
+                                </div>
+                                <div class="banner-container">
+                                    <UCB:UCBanner ID="UCBanner10" runat="server" PositionCode="12" />
+                                </div>
+                                 <div class="banner-container">
+                                    <UCB:UCBanner ID="UCBanner11" runat="server" PositionCode="13" />
+                                </div>
+                                <div class="banner-container">
+                                    <UCB:UCBanner ID="UCBanner12" runat="server" PositionCode="14" />
+                                </div>
+                                <UC:UCGalleries runat="server" />
 
                             </div>
                         </div>
